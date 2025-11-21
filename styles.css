@@ -1,1 +1,82 @@
 
+.map-building {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.map-building:hover {
+    fill: #ff6666; /* or a highlight color */
+}
+
+
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background .3s, color .3s;
+}
+
+/* DARK THEME */
+body.dark {
+    background: #222;
+    color: #eee;
+}
+
+/* NAV BAR */
+nav {
+    background: #b31b1b;
+    padding: 10px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+}
+nav a.active {
+    background: white;
+    color: #b31b1b;
+    border-radius: 4px;
+}
+nav a:hover {
+    background: #7d0f0f;
+}
+
+/* CAMPUS MAP ( layout Testing ) */
+#campusMap {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.building-btn {
+    padding: 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+.building-btn:hover {
+    background: #ddd;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input, select, textarea {
+    padding: 8px;
+    width: 250px;
+}
+.error {
+    color: red;
+    font-size: 0.9em;
+}
