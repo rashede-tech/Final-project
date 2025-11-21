@@ -1,3 +1,82 @@
-can we see this
-hhhhhh
-bla bla bla 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rider University Planner - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="plan.html">Plan</a></li>
+        <li><a href="summary.html">Summary</a></li>
+        <li><button id="themeToggle">Dark Mode</button></li>
+    </ul>
+</nav>
+
+<section>
+    <h1>Rider University Event Planner</h1>
+
+<!--Testing Start-->
+    <!--  Temp SVG  
+<svg
+    id="campusMapSVG"
+    viewBox="0 0 400 300"
+    style="width:100%; max-width:500px; margin-top:20px; border:1px solid #ccc;"
+>
+
+    <!-- Building 1 --
+    <rect
+        x="30" y="30" width="120" height="80"
+        fill="#b31b1b" stroke="#222" stroke-width="2"
+        class="map-building"
+        data-building="Moore Library"
+    ></rect>
+    <text x="40" y="75" fill="white" font-size="16">Library</text>
+
+    <!-- Building 2 --
+    <rect
+        x="200" y="30" width="150" height="90"
+        fill="#7d0f0f" stroke="#222" stroke-width="2"
+        class="map-building"
+        data-building="Fine Arts Center"
+    ></rect>
+    <text x="210" y="80" fill="white" font-size="16">Fine Arts</text>
+
+    <!-- Building 3 --
+    <rect
+        x="30" y="150" width="140" height="100"
+        fill="#8b2e2e" stroke="#222" stroke-width="2"
+        class="map-building"
+        data-building="Science Hall"
+    ></rect>
+    <text x="40" y="210" fill="white" font-size="16">Science Hall</text>
+
+    <!-- Building 4 --
+    <rect
+        x="220" y="160" width="120" height="80"
+        fill="#a62c2c" stroke="#222" stroke-width="2"
+        class="map-building"
+        data-building="Bart Luedeke Center"
+    ></rect>
+    <text x="230" y="205" fill="white" font-size="16">BLC</text>
+
+</svg>
+
+<!--Testing END-->
+    <p>Click a building on the map to start creating your reservation.</p>
+
+    <!-- Simple clickable “map” using styled buttons instead of a real SVG -->
+    <div id="campusMap">
+        <button class="building-btn" data-building="Moore Library">Moore Library</button>
+        <button class="building-btn" data-building="Fine Arts Center">Fine Arts Center</button>
+        <button class="building-btn" data-building="Science Hall">Science Hall</button>
+        <button class="building-btn" data-building="Bart Luedeke Center">BLC</button>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
