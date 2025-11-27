@@ -27,29 +27,83 @@ body.dark {
     color: #eee;
 }
 
-/* NAV BAR */
+/* ========== NAV BAR STYLES ========== */
+
+/* Main navigation bar background and styling */
 nav {
-    background: #b31b1b;
-    padding: 10px;
+    background: #b31b1b;  /* Rider University maroon color */
+    padding: 10px 20px;   /* Space inside navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow effect */
 }
+
+/* Container that holds logo and nav links together */
+.nav-container {
+    display: flex;        /* Use flexbox for horizontal layout */
+    align-items: center;  /* Vertically center all items */
+    gap: 20px;            /* Space between logo and nav links */
+    max-width: 1200px;    /* Max container width */
+    margin: 0 auto;       /* Center container on page */
+}
+
+/* Logo section container */
+.logo-section {
+    display: flex;        /* Flex layout for logo */
+    align-items: center;  /* Center logo vertically */
+    gap: 10px;            /* Space between logo parts if needed */
+}
+
+/* Logo SVG sizing */
+.logo {
+    height: 60px;         /* Logo height */
+    width: auto;          /* Keep aspect ratio */
+    flex-shrink: 0;       /* Prevent logo from shrinking */
+}
+
+/* Navigation list styling */
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
+    display: flex;        /* Horizontal layout */
+    list-style: none;     /* Remove default bullet points */
+    gap: 20px;            /* Space between nav items */
+    align-items: center;  /* Vertically center nav items */
+    margin: 0;            /* Remove default margin */
 }
+
+/* Navigation links styling */
 nav a {
-    color: white;
-    text-decoration: none;
-    padding: 4px 8px;
+    color: white;         /* White text */
+    text-decoration: none;/* Remove underline */
+    padding: 6px 12px;    /* Space around text */
+    border-radius: 4px;   /* Rounded corners */
+    transition: 0.2s;     /* Smooth animation on hover */
 }
+
+/* Active/current page link styling */
 nav a.active {
-    background: white;
-    color: #b31b1b;
-    border-radius: 4px;
+    background: white;    /* White background */
+    color: #b31b1b;       /* Maroon text */
+    font-weight: bold;    /* Bold text */
 }
+
+/* Hover effect for navigation links */
 nav a:hover {
-    background: #7d0f0f;
+    background: #7d0f0f;  /* Darker maroon on hover */
+}
+
+/* Dark mode toggle button styling */
+#themeToggle {
+    background: rgba(255,255,255,0.2);  /* Slight white background */
+    color: white;                        /* White moon icon */
+    border: none;                        /* No border */
+    padding: 6px 12px;                   /* Button padding */
+    border-radius: 4px;                  /* Rounded corners */
+    cursor: pointer;                     /* Pointer cursor on hover */
+    font-size: 1.1em;                    /* Slightly larger moon icon */
+    transition: 0.2s;                    /* Smooth animation */
+}
+
+/* Hover effect for theme toggle button */
+#themeToggle:hover {
+    background: rgba(255,255,255,0.3);  /* More opaque white on hover */
 }
 
 /* CAMPUS MAP ( layout Testing ) */
