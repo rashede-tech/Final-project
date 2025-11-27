@@ -6,15 +6,70 @@
 </head>
 
 <body>
+<!-- NAVIGATION BAR WITH RIDER LOGO -->
 <nav>
-    <ul>
-    <!-- Rider University Logo at top-left -->
-    <img src="https://www.rider.edu/themes/custom/rider_foundation/logo.svg" alt="Rider Logo" class="logo">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="plan.html">Plan</a></li>
-        <li><a href="summary.html">Summary</a></li>
-        <li><button id="themeToggle">Dark Mode</button></li>
-    </ul>
+    <!-- Container that holds logo and navigation together -->
+    <div class="nav-container">
+        
+        <!-- LOGO SECTION -->
+        <div class="logo-section">
+            <!-- SVG Rider University Logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" class="logo">
+                
+                <!-- Shield outer border (maroon color) -->
+                <path d="M 30 20 L 30 50 Q 30 75 60 85 Q 90 75 90 50 L 90 20 Z" fill="#b31b1b" stroke="#8b1538" stroke-width="1.5"/>
+                
+                <!-- Shield inner white background area -->
+                <path d="M 33 23 L 33 50 Q 33 72 60 80 Q 87 72 87 50 L 87 23 Z" fill="white"/>
+                
+                <!-- 1865 year box at top of shield -->
+                <rect x="33" y="23" width="54" height="16" fill="#b31b1b" rx="2"/>
+                <text x="60" y="35" font-size="11" font-weight="bold" fill="white" text-anchor="middle">1865</text>
+                
+                <!-- Tree trunk (main vertical line) -->
+                <line x1="60" y1="44" x2="60" y2="68" stroke="#b31b1b" stroke-width="2.5" stroke-linecap="round"/>
+                
+                <!-- Tree roots (bottom branches) -->
+                <line x1="55" y1="68" x2="50" y2="74" stroke="#b31b1b" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="65" y1="68" x2="70" y2="74" stroke="#b31b1b" stroke-width="1.5" stroke-linecap="round"/>
+                
+                <!-- Tree crown - main circle at top -->
+                <circle cx="60" cy="42" r="7" fill="#b31b1b"/>
+                
+                <!-- Tree crown - side branches (two circles) -->
+                <circle cx="52" cy="46" r="5.5" fill="#b31b1b"/>
+                <circle cx="68" cy="46" r="5.5" fill="#b31b1b"/>
+                
+                <!-- Tree crown - bottom side branches -->
+                <circle cx="48" cy="52" r="4" fill="#b31b1b"/>
+                <circle cx="72" cy="52" r="4" fill="#b31b1b"/>
+                
+                <!-- Tree crown - center bottom circle -->
+                <circle cx="60" cy="54" r="3.5" fill="#b31b1b"/>
+                
+                <!-- "RIDER" text (large gray) -->
+                <text x="130" y="55" font-size="48" font-weight="bold" fill="white" text-anchor="start">RIDER</text>
+                
+                <!-- "UNIVERSITY" text (smaller gray) -->
+                <text x="130" y="80" font-size="24" fill="white" text-anchor="start">UNIVERSITY</text>
+            </svg>
+        </div>
+        
+        <!-- NAVIGATION LINKS -->
+        <ul>
+            <!-- Home link -->
+            <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+            
+            <!-- Plan link -->
+            <li><a href="#" class="nav-link" data-page="plan">Plan</a></li>
+            
+            <!-- Summary link -->
+            <li><a href="#" class="nav-link" data-page="summary">Summary</a></li>
+            
+            <!-- Dark mode toggle button -->
+            <li><button id="themeToggle">🌙</button></li>
+        </ul>
+    </div>
 </nav>
 
 <section>
