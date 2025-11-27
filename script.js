@@ -119,10 +119,10 @@ if (window.location.pathname.includes("summary.html")) {
             <h3>${data.title}</h3>
             <p><strong>Building:</strong> ${data.building}</p>
             <p><strong>Room:</strong> ${data.room}</p>
-            <p><strong>Date & Time:</strong> ${data.datetime}</p>
+            <p><strong>Date & Time:</strong> ${new Date(data.datetime).toLocaleString()}</p>
             <p><strong>Notes:</strong> ${data.notes}</p>
             <p style="color:green;font-weight:bold;">Reservation Complete!</p>
-        `;
+         ;
     }
 }
 
