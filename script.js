@@ -136,4 +136,4 @@ if (toggle) {
 
 <footer>
 <p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
-<footer>
+</footer>
