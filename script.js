@@ -133,3 +133,7 @@ if (toggle) {
         document.body.classList.toggle("dark");
     });
 }
+
+<footer>
+<p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
+<footer>
