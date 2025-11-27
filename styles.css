@@ -135,10 +135,11 @@ input, select, textarea {
     width: 250px;
 }
 
-<footer>
-<p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
-<footer>
 .error {
     color: red;
     font-size: 0.9em;
 }
+
+<footer>
+<p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
+<footer>
