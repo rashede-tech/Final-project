@@ -115,7 +115,7 @@ if (window.location.pathname.includes("summary.html")) {
     if (!data) {
         summaryDiv.innerHTML = "<p>No reservation found.</p>";
     } else {
-        summaryDiv.innerHTML = `
+        summaryDiv.innerHTML = 
             <h3>${data.title}</h3>
             <p><strong>Building:</strong> ${data.building}</p>
             <p><strong>Room:</strong> ${data.room}</p>
