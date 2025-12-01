@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fine Arts Building & The Yvonne Theater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .building-page {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .building-header {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .building-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .building-header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .building-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+
+    .info-section {
+      margin-bottom: 30px;
+    }
+
+    .info-section h2 {
+      color: #8B0000;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      border-bottom: 2px solid #8B0000;
+      padding-bottom: 10px;
+    }
+
+    .info-section p {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .info-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-section ul li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #333;
+    }
+
+    .info-section ul li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #8B0000;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .building-page {
+        padding: 20px;
+      }
+
+      .building-header h1 {
+        font-size: 1.8em;
+      }
+
+      .building-header {
+        padding: 25px;
+      }
+
+      .building-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="building-page">
+    <div class="building-header">
+      <h1>🎭 Fine Arts Building & The Yvonne Theater</h1>
+      <p>Celebrating Creativity and Performance</p>
+    </div>
+    <div class="building-content">
+      <div class="info-section">
+        <h2>About</h2>
+        <p>The Fine Arts Building is the creative heart of campus, housing the renowned Yvonne Theater and providing world-class facilities for students in music, theater, dance, and visual arts. This inspiring space nurtures artistic expression and showcases exceptional performances throughout the year.</p>
+      </div>
+      
+      <div class="info-section">
+        <h2>Facilities</h2>
+        <ul>
+          <li>The Yvonne Theater - 450-seat performance venue</li>
+          <li>Art studios and exhibition galleries</li>
+          <li>Music practice rooms and rehearsal spaces</li>
+          <li>Dance studios with professional flooring</li>
+          <li>Scene and costume design shops</li>
+          <li>Digital media and recording labs</li>
+          <li>Green room and dressing rooms</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h2>The Yvonne Theater</h2>
+        <p>A state-of-the-art performance venue that hosts concerts, theatrical productions, dance performances, lectures, and community events. The theater features professional lighting and sound systems, making it a premier venue in the region.</p>
+      </div>
+      
+      <div class="info-section">
+        <h2>Events & Performances</h2>
+        <p>Throughout the academic year, the Fine Arts Building hosts numerous student and professional performances, art exhibitions, and cultural events. Check the campus calendar for upcoming shows and gallery openings!</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-button">← Back to Campus Map</a>
+  </div>
+</body>
+</html>
