@@ -1,7 +1,3 @@
-nav img.logo {
-    height: 40px;
-    margin-right: 10px;
-}
 
 .map-building {
     cursor: pointer;
@@ -27,83 +23,29 @@ body.dark {
     color: #eee;
 }
 
-/* ========== NAV BAR STYLES ========== */
-
-/* Main navigation bar background and styling */
+/* NAV BAR */
 nav {
-    background: #b31b1b;  /* Rider University maroon color */
-    padding: 10px 20px;   /* Space inside navbar */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow effect */
+    background: #b31b1b;
+    padding: 10px;
 }
-
-/* Container that holds logo and nav links together */
-.nav-container {
-    display: flex;        /* Use flexbox for horizontal layout */
-    align-items: center;  /* Vertically center all items */
-    gap: 20px;            /* Space between logo and nav links */
-    max-width: 1200px;    /* Max container width */
-    margin: 0 auto;       /* Center container on page */
-}
-
-/* Logo section container */
-.logo-section {
-    display: flex;        /* Flex layout for logo */
-    align-items: center;  /* Center logo vertically */
-    gap: 10px;            /* Space between logo parts if needed */
-}
-
-/* Logo SVG sizing */
-.logo {
-    height: 60px;         /* Logo height */
-    width: auto;          /* Keep aspect ratio */
-    flex-shrink: 0;       /* Prevent logo from shrinking */
-}
-
-/* Navigation list styling */
 nav ul {
-    display: flex;        /* Horizontal layout */
-    list-style: none;     /* Remove default bullet points */
-    gap: 20px;            /* Space between nav items */
-    align-items: center;  /* Vertically center nav items */
-    margin: 0;            /* Remove default margin */
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
 }
-
-/* Navigation links styling */
 nav a {
-    color: white;         /* White text */
-    text-decoration: none;/* Remove underline */
-    padding: 6px 12px;    /* Space around text */
-    border-radius: 4px;   /* Rounded corners */
-    transition: 0.2s;     /* Smooth animation on hover */
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
 }
-
-/* Active/current page link styling */
 nav a.active {
-    background: white;    /* White background */
-    color: #b31b1b;       /* Maroon text */
-    font-weight: bold;    /* Bold text */
+    background: white;
+    color: #b31b1b;
+    border-radius: 4px;
 }
-
-/* Hover effect for navigation links */
 nav a:hover {
-    background: #7d0f0f;  /* Darker maroon on hover */
-}
-
-/* Dark mode toggle button styling */
-#themeToggle {
-    background: rgba(255,255,255,0.2);  /* Slight white background */
-    color: white;                        /* White moon icon */
-    border: none;                        /* No border */
-    padding: 6px 12px;                   /* Button padding */
-    border-radius: 4px;                  /* Rounded corners */
-    cursor: pointer;                     /* Pointer cursor on hover */
-    font-size: 1.1em;                    /* Slightly larger moon icon */
-    transition: 0.2s;                    /* Smooth animation */
-}
-
-/* Hover effect for theme toggle button */
-#themeToggle:hover {
-    background: rgba(255,255,255,0.3);  /* More opaque white on hover */
+    background: #7d0f0f;
 }
 
 /* CAMPUS MAP ( layout Testing ) */
@@ -134,12 +76,114 @@ input, select, textarea {
     padding: 8px;
     width: 250px;
 }
-
 .error {
     color: red;
     font-size: 0.9em;
 }
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<footer>
-<p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
-</footer>
+    html, body {
+      height: 100%;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .map-wrapper {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .map-container {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      display: inline-block;
+    }
+
+    .map-container img {
+      max-width: 100%;
+      max-height: 100vh;
+      display: block;
+    }
+
+    .clickable-area {
+      position: absolute;
+      cursor: pointer;
+      background: rgba(255, 215, 0, 0.15);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      visibility: ;
+    }
+
+    .clickable-area:hover {
+      background: rgba(255, 215, 0, 0.35);
+      border: 2px solid #c40303 ;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      z-index: 10;
+    }
+
+    .label {
+      position: absolute;
+      background: rgba(139, 0, 0, 0.9);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 100;
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .clickable-area:hover .label {
+      opacity: 1;
+    }
+
+    /* Building positions */
+    .bierenbaum {
+      top: 41%;
+      left: 63%;
+      width: 10%;
+      height: 5%;
+    }
+
+    .hennessy {
+      top: 37.5%;
+      left: 73%;
+      width: 10%;
+      height: 5%;
+    }
+
+    .sweigart {
+      top: 37%;
+      left: 56%;
+      width: 12%;
+      height: 5%;
+    }
+
+    .fine-arts {
+      top: 30%;
+      left: 62%;
+      width: 15%;
+      height: 5%;
+    }
+
+    .lynch-adler {
+      top: 46%;
+      left: 70%;
+      width: 10%;
+      height: 5%;
+    }
