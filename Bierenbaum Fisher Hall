@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bierenbaum Fisher Hall</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .building-page {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .building-header {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .building-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .building-header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .building-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+
+    .info-section {
+      margin-bottom: 30px;
+    }
+
+    .info-section h2 {
+      color: #8B0000;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      border-bottom: 2px solid #8B0000;
+      padding-bottom: 10px;
+    }
+
+    .info-section p {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .info-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-section ul li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #333;
+    }
+
+    .info-section ul li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #8B0000;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .building-page {
+        padding: 20px;
+      }
+
+      .building-header h1 {
+        font-size: 1.8em;
+      }
+
+      .building-header {
+        padding: 25px;
+      }
+
+      .building-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="building-page">
+    <div class="building-header">
+      <h1>🏛️ Bierenbaum Fisher Hall</h1>
+      <p>Academic Excellence in Action</p>
+    </div>
+    <div class="building-content">
+      <div class="info-section">
+        <h2>About</h2>
+        <p>Bierenbaum Fisher Hall is a state-of-the-art academic facility dedicated to fostering innovation and collaborative learning. This modern building houses classrooms, faculty offices, and study spaces designed to support the academic mission of Rider University.</p>
+      </div>
+      
+      <div class="info-section">
+        <h2>Facilities</h2>
+        <ul>
+          <li>Smart classrooms with advanced technology</li>
+          <li>Collaborative study lounges</li>
+          <li>Faculty research offices</li>
+          <li>Student meeting rooms</li>
+          <li>Modern lecture halls</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h2>Building Hours</h2>
+        <p><strong>Monday - Friday:</strong> 7:00 AM - 10:00 PM</p>
+        <p><strong>Saturday - Sunday:</strong> 9:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+    <a href="new-file-1.html" class="back-button">← Back to Campus Map</a>
+  </div>
+</body>
+</html>
