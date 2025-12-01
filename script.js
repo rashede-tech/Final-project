@@ -1,20 +1,11 @@
-/* Make SVG buildings clickable */
-const svgBuildings = document.querySelectorAll(".map-building");
-
-if (svgBuildings) {
-    svgBuildings.forEach(building => {
-        building.addEventListener("click", () => {
-            const buildingName = building.dataset.building;
-
-            // Store in localStorage for plan.html
-            localStorage.setItem("selectedBuilding", buildingName);
-
-            // Redirect user to plan page
-            window.location.href = "plan.html";
-        });
+// CLICKABLE MAP AREAS (<a> elements)
+document.querySelectorAll(".clickable-area").forEach(area => {
+    area.addEventListener("click", function (e) 
+    {
+        const buildingName = this.dataset.building;
+        localStorage.setItem("selectedBuilding", buildingName);
     });
-}
-
+});
 
 
 /* Save the selected building from index.html */
@@ -115,14 +106,14 @@ if (window.location.pathname.includes("summary.html")) {
     if (!data) {
         summaryDiv.innerHTML = "<p>No reservation found.</p>";
     } else {
-        summaryDiv.innerHTML = 
+        summaryDiv.innerHTML = `
             <h3>${data.title}</h3>
             <p><strong>Building:</strong> ${data.building}</p>
             <p><strong>Room:</strong> ${data.room}</p>
-            <p><strong>Date & Time:</strong> ${new Date(data.datetime).toLocaleString()}</p>
+            <p><strong>Date & Time:</strong> ${data.datetime}</p>
             <p><strong>Notes:</strong> ${data.notes}</p>
             <p style="color:green;font-weight:bold;">Reservation Complete!</p>
-         ;
+        `;
     }
 }
 
@@ -133,7 +124,3 @@ if (toggle) {
         document.body.classList.toggle("dark");
     });
 }
-
-<footer>
-<p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
-</footer>
