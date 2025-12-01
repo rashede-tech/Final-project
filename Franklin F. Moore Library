@@ -1,0 +1,240 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Franklin F. Moore Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .building-page {
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .building-header {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .building-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .building-header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .building-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+
+    .info-section {
+      margin-bottom: 30px;
+    }
+
+    .info-section h2 {
+      color: #8B0000;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      border-bottom: 2px solid #8B0000;
+      padding-bottom: 10px;
+    }
+
+    .info-section p {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .info-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-section ul li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #333;
+    }
+
+    .info-section ul li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #8B0000;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+
+    .hours-day {
+      font-weight: bold;
+      color: #8B0000;
+    }
+
+    @media (max-width: 768px) {
+      .building-page {
+        padding: 20px;
+      }
+
+      .building-header h1 {
+        font-size: 1.8em;
+      }
+
+      .building-header {
+        padding: 25px;
+      }
+
+      .building-content {
+        padding: 20px;
+      }
+
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="building-page">
+    <div class="building-header">
+      <h1>📚 Franklin F. Moore Library</h1>
+      <p>Your Gateway to Knowledge and Discovery</p>
+    </div>
+    <div class="building-content">
+      <div class="info-section">
+        <h2>About</h2>
+        <p>The Franklin F. Moore Library is the intellectual heart of Rider University, providing students and faculty with access to extensive collections, modern study spaces, and expert research assistance. Our mission is to support academic excellence and lifelong learning through innovative services and resources.</p>
+      </div>
+      
+      <div class="info-section">
+        <h2>Collections & Resources</h2>
+        <ul>
+          <li>Over 400,000 books and bound periodicals</li>
+          <li>Access to 100+ research databases</li>
+          <li>Thousands of electronic journals and e-books</li>
+          <li>Special collections and university archives</li>
+          <li>Media resources including DVDs and streaming content</li>
+          <li>Government documents collection</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h2>Facilities & Spaces</h2>
+        <ul>
+          <li>Individual and group study rooms</li>
+          <li>Computer labs with latest software</li>
+          <li>Quiet study areas on multiple floors</li>
+          <li>Collaborative learning spaces</li>
+          <li>Café area for refreshments</li>
+          <li>Research consultation rooms</li>
+          <li>Presentation practice rooms</li>
+          <li>24/7 study lounge (during semester)</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h2>Services</h2>
+        <ul>
+          <li>Research assistance from professional librarians</li>
+          <li>Interlibrary loan services</li>
+          <li>Course reserves and textbook lending</li>
+          <li>Technology lending (laptops, tablets, cameras)</li>
+          <li>Printing, scanning, and copying services</li>
+          <li>Citation management tools and workshops</li>
+          <li>Information literacy instruction</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h2>Library Hours</h2>
+        <div class="hours-grid">
+          <div class="hours-item">
+            <span class="hours-day">Monday - Thursday:</span>
+            <span>7:30 AM - 2:00 AM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day">Friday:</span>
+            <span>7:30 AM - 8:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day">Saturday:</span>
+            <span>10:00 AM - 8:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day">Sunday:</span>
+            <span>10:00 AM - 2:00 AM</span>
+          </div>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">Hours may vary during breaks and holidays. Visit the library website for current hours.</p>
+      </div>
+      
+      <div class="info-section">
+        <h2>Contact Information</h2>
+        <p><strong>Phone:</strong> (609) 896-5115</p>
+        <p><strong>Email:</strong> library@rider.edu</p>
+        <p><strong>Research Help:</strong> Available via chat, email, or in-person consultation</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-button">← Back to Campus Map</a>
+  </div>
+</body>
+</html>
