@@ -1,147 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Rider University Planner - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Interactive Campus Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .map-wrapper {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .map-container {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      display: inline-block;
+    }
+
+    .map-container img {
+      max-width: 100%;
+      max-height: 100vh;
+      display: block;
+    }
+
+    .clickable-area {
+      position: absolute;
+      cursor: pointer;
+      background: rgba(255, 215, 0, 0.15);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .clickable-area:hover {
+      background: rgba(255, 215, 0, 0.35);
+      border: 2px solid #FFD700;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      z-index: 10;
+    }
+
+    .label {
+      position: absolute;
+      background: rgba(139, 0, 0, 0.9);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 100;
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .clickable-area:hover .label {
+      opacity: 1;
+    }
+
+    /* Building positions */
+    .bierenbaum {
+      top: 51%;
+      left: 58%;
+      width: 7%;
+      height: 5%;
+    }
+
+    .hennessy {
+      top: 47%;
+      left: 67%;
+      width: 11%;
+      height: 7%;
+    }
+
+    .sweigart {
+      top: 40%;
+      left: 56%;
+      width: 8%;
+      height: 5%;
+    }
+
+    .fine-arts {
+      top: 34%;
+      left: 57%;
+      width: 10%;
+      height: 7%;
+    }
+
+    .lynch-adler {
+      top: 54%;
+      left: 68%;
+      width: 8%;
+      height: 5%;
+    }
+  </style>
 </head>
-
 <body>
-<!-- NAVIGATION BAR WITH RIDER LOGO -->
-<nav>
-    <!-- Container that holds logo and navigation together -->
-    <div class="nav-container">
-        
-        <!-- LOGO SECTION -->
-        <div class="logo-section">
-            <!-- SVG Rider University Logo -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" class="logo">
-                
-                <!-- Shield outer border (maroon color) -->
-                <path d="M 30 20 L 30 50 Q 30 75 60 85 Q 90 75 90 50 L 90 20 Z" fill="#b31b1b" stroke="#8b1538" stroke-width="1.5"/>
-                
-                <!-- Shield inner white background area -->
-                <path d="M 33 23 L 33 50 Q 33 72 60 80 Q 87 72 87 50 L 87 23 Z" fill="white"/>
-                
-                <!-- 1865 year box at top of shield -->
-                <rect x="33" y="23" width="54" height="16" fill="#b31b1b" rx="2"/>
-                <text x="60" y="35" font-size="11" font-weight="bold" fill="white" text-anchor="middle">1865</text>
-                
-                <!-- Tree trunk (main vertical line) -->
-                <line x1="60" y1="44" x2="60" y2="68" stroke="#b31b1b" stroke-width="2.5" stroke-linecap="round"/>
-                
-                <!-- Tree roots (bottom branches) -->
-                <line x1="55" y1="68" x2="50" y2="74" stroke="#b31b1b" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="65" y1="68" x2="70" y2="74" stroke="#b31b1b" stroke-width="1.5" stroke-linecap="round"/>
-                
-                <!-- Tree crown - main circle at top -->
-                <circle cx="60" cy="42" r="7" fill="#b31b1b"/>
-                
-                <!-- Tree crown - side branches (two circles) -->
-                <circle cx="52" cy="46" r="5.5" fill="#b31b1b"/>
-                <circle cx="68" cy="46" r="5.5" fill="#b31b1b"/>
-                
-                <!-- Tree crown - bottom side branches -->
-                <circle cx="48" cy="52" r="4" fill="#b31b1b"/>
-                <circle cx="72" cy="52" r="4" fill="#b31b1b"/>
-                
-                <!-- Tree crown - center bottom circle -->
-                <circle cx="60" cy="54" r="3.5" fill="#b31b1b"/>
-                
-                <!-- "RIDER" text (large gray) -->
-                <text x="130" y="55" font-size="48" font-weight="bold" fill="white" text-anchor="start">RIDER</text>
-                
-                <!-- "UNIVERSITY" text (smaller gray) -->
-                <text x="130" y="80" font-size="24" fill="white" text-anchor="start">UNIVERSITY</text>
-            </svg>
-        </div>
-
-
-
-        !--THIS IS TEST CODE--!
-        
-        <!-- NAVIGATION LINKS -->
-        <ul>
-            <!-- Home link -->
-            <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-            
-            <!-- Plan link -->
-            <li><a href="#" class="nav-link" data-page="plan">Plan</a></li>
-            
-            <!-- Summary link -->
-            <li><a href="#" class="nav-link" data-page="summary">Summary</a></li>
-            
-            <!-- Dark mode toggle button -->
-            <li><button id="themeToggle">🌙</button></li>
-        </ul>
+  <div class="map-wrapper">
+    <div class="map-container">
+      <img src="https://yocj.org/wp-content/uploads/2021/09/Rider-U-campus-map-jpg.jpg" alt="Campus Map">
+      
+      <a href="Bierenbaum-Fisher-Hall.html" class="clickable-area bierenbaum">
+        <div class="label">Bierenbaum Fisher Hall</div>
+      </a>
+      
+      <a href="hennessy.html" class="clickable-area hennessy">
+        <div class="label">Hennessy Science & Tech Center</div>
+      </a>
+      
+      <a href="sweigart.html" class="clickable-area sweigart">
+        <div class="label">Anne Brossman Sweigart Hall</div>
+      </a>
+      
+      <a href="finearts.html" class="clickable-area fine-arts">
+        <div class="label">Fine Arts & Yvonne Theater</div>
+      </a>
+      
+      <a href="lynch.html" class="clickable-area lynch-adler">
+        <div class="label">Lynch Adler Hall</div>
+      </a>
     </div>
-</nav>
-
-<section>
-    <h1>Rider University Event Planner</h1>
-
-<!--Testing Start-->
-    <!--  Temp SVG  
-<svg
-    id="campusMapSVG"
-    viewBox="0 0 400 300"
-    style="width:100%; max-width:500px; margin-top:20px; border:1px solid #ccc;"
->
-
-    <!-- Building 1 --
-    <rect
-        x="30" y="30" width="120" height="80"
-        fill="#b31b1b" stroke="#222" stroke-width="2"
-        class="map-building"
-        data-building="Moore Library"
-    ></rect>
-    <text x="40" y="75" fill="white" font-size="16">Library</text>
-
-    <!-- Building 2 --
-    <rect
-        x="200" y="30" width="150" height="90"
-        fill="#7d0f0f" stroke="#222" stroke-width="2"
-        class="map-building"
-        data-building="Fine Arts Center"
-    ></rect>
-    <text x="210" y="80" fill="white" font-size="16">Fine Arts</text>
-
-    <!-- Building 3 --
-    <rect
-        x="30" y="150" width="140" height="100"
-        fill="#8b2e2e" stroke="#222" stroke-width="2"
-        class="map-building"
-        data-building="Science Hall"
-    ></rect>
-    <text x="40" y="210" fill="white" font-size="16">Science Hall</text>
-
-    <!-- Building 4 --
-    <rect
-        x="220" y="160" width="120" height="80"
-        fill="#a62c2c" stroke="#222" stroke-width="2"
-        class="map-building"
-        data-building="Bart Luedeke Center"
-    ></rect>
-    <text x="230" y="205" fill="white" font-size="16">BLC</text>
-
-</svg>
-
-<!--Testing END-->
-    <p>Click a building on the map to start creating your reservation.</p>
-
-    <!-- Simple clickable “map” using styled buttons instead of a real SVG -->
-    <div id="campusMap">
-        <button class="building-btn" data-building="Moore Library">Moore Library</button>
-        <button class="building-btn" data-building="Fine Arts Center">Fine Arts Center</button>
-        <button class="building-btn" data-building="Science Hall">Science Hall</button>
-        <button class="building-btn" data-building="Bart Luedeke Center">BLC</button>
-    </div>
-
-</section>
-
-<script src="script.js"></script>
+  </div>
 </body>
 </html>
-
-<footer>
-<p>&copy; 2025 El,Nasir and Dhruv All rights reserved.</p>
-</footer>
