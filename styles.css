@@ -19,20 +19,24 @@ body {
 
 /* DARK THEME */
 body.dark {
-    background: #222;
+    background: #f8f5f5;
     color: #eee;
 }
 
+ 
 /* NAV BAR */
 nav {
     background: #b31b1b;
-    padding: 10px;
+    padding: 15px;
+    
 }
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
-    align-items: center;
+    gap: 10px;
+    align-items: top
+
+
 }
 nav a {
     color: white;
@@ -187,3 +191,4 @@ input, select, textarea {
       width: 10%;
       height: 5%;
     }
+
