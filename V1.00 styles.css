@@ -1,0 +1,249 @@
+/* ---------- GLOBAL THEME COLORS ---------- */
+:root{
+--accent:#b31b1b; /* Rider red */
+--muted:#666; /* Soft gray text */
+--card:#fff; /* Card background */
+--bg:#f5f5f7; /* Light site background */
+}
+
+
+/* ---------- PAGE BASICS ---------- */
+*{box-sizing:border-box}
+body{
+margin:0;
+background:var(--bg);
+color:#222;
+font-family:Inter,Arial,Helvetica,sans-serif;
+}
+
+
+/* ---------- NAVIGATION BAR ---------- */
+nav{
+background:var(--accent);
+color:#fff;
+padding:10px;
+}
+nav ul{
+list-style:none;
+margin:0;
+padding:0;
+display:flex;
+align-items:center;
+gap:12px;
+}
+nav a{
+color:#fff;
+padding:6px 8px;
+border-radius:4px;
+text-decoration:none;
+}
+nav a.active{
+background:#fff;
+color:var(--accent);
+}
+.brand img{
+height:34px;
+}
+
+/* ---------- LAYOUT HELPERS ---------- */
+.container{
+max-width:980px;
+margin:20px auto;
+padding:0 16px;
+}
+.lead{
+color:var(--muted);
+margin-bottom:12px;
+}
+
+
+/* ---------- MAP AREA ---------- */
+.map-wrapper{display:flex;justify-content:center;}
+.map-container{position:relative;max-width:100%;}
+.map-container img{width:100%;max-width:800px;border-radius:8px;}
+
+
+.clickable-area {
+      position: absolute;
+      cursor: pointer;
+      background: rgba(255, 215, 0, 0.15);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .clickable-area:hover {
+      background: rgba(255, 215, 0, 0.35);
+      border: 2px solid #c40303 ;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      z-index: 10;
+    }
+
+    .label {
+      position: absolute;
+      background: rgba(139, 0, 0, 0.9);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 100;
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .clickable-area:hover .label {
+      opacity: 1;
+    }
+
+    /* Building positions */
+    .bierenbaum {
+      top: 41%;
+      left: 63%;
+      width: 10%;
+      height: 5%;
+    }
+
+    .hennessy {
+      top: 37.5%;
+      left: 73%;
+      width: 10%;
+      height: 5%;
+    }
+
+    .sweigart {
+      top: 37%;
+      left: 56%;
+      width: 12%;
+      height: 5%;
+    }
+
+    .fine-arts {
+      top: 30%;
+      left: 62%;
+      width: 15%;
+      height: 5%;
+    }
+
+    .lynch-adler {
+      top: 46%;
+      left: 70%;
+      width: 10%;
+      height: 5%;
+    }
+    .moore-lib{
+      top: 45%;
+      left: 48%;
+      width: 10%;
+      height: 5%;
+    }
+
+/* ---------- QUICK BUTTONS ---------- */
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:10px;
+}
+.building-btn{
+padding:8px 10px;
+border-radius:8px;
+border:1px solid #ddd;
+background:#fff;
+cursor:pointer;
+}
+
+
+/* ---------- FORM + CARD ELEMENTS ---------- */
+.card{
+background:var(--card);
+padding:16px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+.form-row{margin-bottom:12px;}
+label{font-weight:600;margin-bottom:6px;display:block;}
+input,textarea,select{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+.error{color:#c00;font-size:13px;}
+
+
+/* Buttons */
+.btn-primary{
+background:var(--accent);
+color:#fff;
+padding:10px 14px;
+border-radius:8px;
+border:none;
+cursor:pointer;
+}
+.btn-secondary{
+background:#fff;
+border:1px solid #ddd;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* ---------- MODAL FOR DELETIONS ---------- */
+.modal{
+position:fixed;
+inset:0;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.4);
+}
+.modal[aria-hidden="false"]{display:flex;}
+.modal-content{
+background:#fff;
+padding:18px;
+border-radius:10px;
+width:90%;
+max-width:700px;
+}
+
+
+/* ---------- RESERVATION LISTS ---------- */
+.reservation-item{
+border:1px solid #eee;
+padding:10px;
+border-radius:8px;
+margin-bottom:8px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.reservation-item .meta{font-size:13px;color:var(--muted);}
+
+
+/* ---------- DARK MODE ---------- */
+body.dark{
+background:#111;
+color:#eaeaea;
+}
+body.dark .card{
+background:#111;
+border:1px solid #222;
+box-shadow:none;
+}
+body.dark input,body.dark textarea,body.dark select{
+background:#0f0f0f;
+color:#eaeaea;
+border:1px solid #222;
+}
+
+
+/* ---------- SMALL SCREENS ---------- */
+@media(max-width:700px){
+.quick-buttons{justify-content:flex-start;}
+}
