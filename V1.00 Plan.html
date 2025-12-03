@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rider University Planner - Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<ul>
+<li class="brand"><img src="https://www.wgcpas.com/wp-content/uploads/2020/03/RIDER-University-logo.png" alt="Rider logo"/></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="plan.html" class="active">Plan</a></li>
+<li><a href="summary.html">Summary</a></li>
+<li><button id="themeToggle">🌙</button></li>
+</ul>
+</nav>
+
+<main class="container">
+
+<h2>Create Your Reservation</h2>
+<p class="lead">
+Fill out the form below. Reservations are limited to 
+<strong>1 hour 30 minutes</strong>.  
+You may have up to <strong>2 active reservations</strong> using a Rider email.
+</p>
+
+<form id="planForm" class="card">
+
+    <div class="form-row">
+        <label for="fullname">Your Name*</label>
+        <input id="fullname" type="text" placeholder="Jane Student">
+        <p class="error" id="nameError"></p>
+    </div>
+
+    <div class="form-row">
+        <label for="email">Rider Email* (must end with @rider.edu)</label>
+        <input id="email" type="email" placeholder="name@rider.edu">
+        <p class="error" id="emailError"></p>
+    </div>
+
+    <div class="form-row">
+        <label for="building">Selected Building</label>
+        <input id="building" type="text" readonly placeholder="(Choose a building from the map)">
+    </div>
+
+    <div class="form-row">
+        <label for="room">Available Rooms</label>
+        <select id="room"></select>
+    </div>
+
+    <div class="form-row">
+        <label for="title">Event Title*</label>
+        <input id="title" type="text" placeholder="Club Meeting / Lecture">
+        <p class="error" id="titleError"></p>
+    </div>
+
+    <div class="form-row">
+        <label for="datetime">Start Date & Time*</label>
+        <input id="datetime" type="datetime-local">
+        <p class="error" id="dateError"></p>
+    </div>
+
+    <div class="form-row">
+        <label for="notes">Notes (optional, 200 characters max)</label>
+        <textarea id="notes" maxlength="200" placeholder="Any special requirements..."></textarea>
+        <p id="charCounter">0 / 200</p>
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="btn-primary">Submit Reservation</button>
+        <button type="button" id="manageBtn" class="btn-secondary">Manage My Reservations</button>
+    </div>
+
+</form>
+
+<!-- Reservation Limit Modal -->
+<div id="deleteModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+        <h3>Reservation limit reached</h3>
+        <p>You already have <span id="existingCount"></span> active reservations.  
+        Delete one below to make a new one.</p>
+
+        <div id="existingList"></div>
+
+        <div class="modal-actions">
+            <button id="closeModal" class="btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
