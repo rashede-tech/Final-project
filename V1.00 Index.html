@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rider University Planner - Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<ul>
+<li class="brand"><img src="https://www.wgcpas.com/wp-content/uploads/2020/03/RIDER-University-logo.png" alt="Rider logo"/></li>
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="plan.html">Plan</a></li>
+<li><a href="summary.html">Summary</a></li>
+<li><button id="themeToggle">🌙</button></li>
+</ul>
+</nav>
+
+
+<main class="container">
+<header>
+<h1>Rider University Room Reservation Planner</h1>
+<p class="lead">Welcome! Click a building on the campus map or use the quick buttons below to start reserving a room for your campus event. Each reservation lasts <strong>1 hour 30 minutes</strong>. You may have up to <strong>2 active reservations</strong>.</p>
+</header>
+
+
+<section class="map-section">
+<div class="map-wrapper">
+<div class="map-container">
+<img src="https://yocj.org/wp-content/uploads/2021/09/Rider-U-campus-map-jpg.jpg" alt="Campus Map">
+
+
+<!-- Clickable areas (links to plan.html) -->
+<a href="plan.html" class="clickable-area bierenbaum" data-building="Bierenbaum Fisher Hall"><div class="label">Bierenbaum Fisher Hall</div></a>
+<a href="plan.html" class="clickable-area hennessy" data-building="Science & Tech Center"><div class="label">Science & Tech Center</div></a>
+<a href="plan.html" class="clickable-area sweigart" data-building="Anne Brossman Sweigart Hall"><div class="label">Sweigart Hall</div></a>
+<a href="plan.html" class="clickable-area fine-arts" data-building="Fine Arts Center"><div class="label">Fine Arts Center</div></a>
+<a href="plan.html" class="clickable-area lynch-adler" data-building="Lynch Adler Hall"><div class="label">Lynch Adler Hall</div></a>
+<a href="plan.html" class="clickable-area moore-lib" data-building="Moore Library"><div class="label">Moore Library</div></a>
+</div>
+</div>
+
+
+<div id="campusMap" class="quick-buttons">
+<p class="small">Quick pick:</p>
+<button class="building-btn" data-building="Bierenbaum Fisher Hall">Bierenbaum Fisher Hall</button>
+<button class="building-btn" data-building="Science & Tech Center">Science & Tech Center</button>
+<button class="building-btn" data-building="Anne Brossman Sweigart Hall">Sweigart Hall</button>
+<button class="building-btn" data-building="Fine Arts Center">Fine Arts Center</button>
+<button class="building-btn" data-building="Lynch Adler Hall">Lynch Adler Hall</button>
+<button class="building-btn" data-building="Moore Library">Moore Library</button>
+</div>
+
+
+<p class="hint">Tip: click a building to prefill it on the reservation form, then follow the step-by-step instructions on the Plan page.</p>
+</section>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
