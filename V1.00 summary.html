@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reservation Summary</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<ul>
+<li class="brand"><img src="https://www.wgcpas.com/wp-content/uploads/2020/03/RIDER-University-logo.png" alt="Rider logo"/></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="plan.html">Plan</a></li>
+<li><a href="summary.html" class="active">Summary</a></li>
+<li><button id="themeToggle">🌙</button></li>
+</ul>
+</nav>
+
+
+<main class="container">
+<h2>Reservation Success</h2>
+<p class="lead">Below is the information for the reservation you just created. You can also manage or delete reservations from this page.</p>
+
+
+<div id="summaryContent" class="card">Loading...</div>
+<div class="actions">
+<button onclick="window.location.href='plan.html'" class="btn-primary">Make Another Reservation</button>
+<button id="manageFromSummary" class="btn-secondary">Manage My Reservations</button>
+</div>
+
+
+<section>
+<h3>All Your Active Reservations</h3>
+<div id="allReservations"></div>
+</section>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
